@@ -23,21 +23,35 @@ img, picture {
     --primary-dark: #2b2563;
     --secondary-accent: #648381;
     --primary-background: #ffffff;
-    --alt-background: #FBF9FF;
+    --alt-background: #F0EFF4;
     --font-dark: #2C2A33;
     --font-light: #ffffff;
     --error: #cc0000;
 }
 
 body {
-    background-color: var(--primary-background);
     min-height: 100vh;
     font-size: 1rem;
+    background-size: 5px 5px;
+    background-image: linear-gradient(to right, #3B328710 1px, transparent 1px), linear-gradient(to bottom, #3B328710 1px, transparent 1px);
+    background-attachment: fixed;
 }
 
 h1, h2, h3 {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+
 }
 
 p, a {
@@ -64,12 +78,10 @@ p, a {
     box-shadow: 0px 6px 8px 1px rgba(0, 0, 0, 0.3);
 }
 
-/* HEADER & NAV */
+/**** HEADER & NAV ****/
 header {
-    background-color: var(--background);
-    padding: 0 20px;
+    background-color: var(--primary-background);
     height: 70px;
-    justify-content: space-between;
     align-items: center;
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -78,6 +90,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 }
 
 .logo img {
@@ -156,19 +169,19 @@ header {
 
 .nav-link a {
     color: var(--font-light);
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 @media only screen and (min-width: 768px) {
     header {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
 
-    #header-container {
+    .header-container {
         width: 100%;
-        max-width: 900px;
+        max-width: 1024px;
     }
 
     #menu-icon {
@@ -177,9 +190,128 @@ header {
 
     #nav-menu {
         visibility: visible;
-        display: flex;
         position: relative;
+        width: auto;
+        padding: 0;
+        align-items: center;
         transform: translateX(0);
+        background-color: var(--primary-background);
+        
     }
 
+    #nav-links {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        padding: 10px;
+        border-bottom: 1.5px solid transparent;
+        transition: border-bottom 0.2s;
+    }
+
+    .nav-link:hover {
+        border-bottom: 1.5px solid var(--primary-accent);
+    }
+
+    .nav-link a {
+        font-size: 1rem;
+        color: var(--font-dark);
+        padding-bottom: 4px;
+    }
+}   /*  end 768px breakpoint  */
+
+/**** FOOTER ****/
+
+/* ===========================
+        INDEX PAGE CONTENT    
+=============================*/
+.index-container {
+    display: flex;
+    flex-direction: column;
+    /* gap: 50px; */
 }
+
+/* TITLE SECTION */
+.title-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    margin: 5em 0;
+}
+
+.title-banner span {
+    color: var(--secondary-accent);
+    font-weight: 500;
+}
+
+.title-banner p {
+    display: flex;
+    max-width: 200px;
+    margin: 0 26px 10px 0;
+    text-align: left;
+}
+
+
+/* PROJECTS SECTION */
+.projects-container {
+    background-color: var(--primary-background);
+    padding: 20px;
+    border-top: 1px solid var(--alt-background);
+    border-bottom: 1px solid var(--alt-background);
+}
+
+.heading-container {
+    margin: 10px 0 20px 0;
+}
+
+.heading-desc {
+    margin-top: 10px;
+}
+
+.project-cards-container {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--alt-background);
+    box-shadow: #00000033 0px 2px 8px 0px;
+    transition: all 0.2s;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.project-card:hover {
+    box-shadow: 0px 6px 8px 1px #0000004d;
+}
+
+.project-img img {
+    border-radius: 10px 10px 0 0;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .project-cards-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .project-card {
+        width: 400px;
+    }
+
+    /* change so image is displayed on left and desc is on the right, long width project cards */
+
+
+}   /*  end 768px breakpoint  */
+
+/* ===========================
+    PROJECTS PAGE CONTENT    
+=============================*/
