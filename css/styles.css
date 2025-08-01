@@ -3,16 +3,16 @@
 ============================*/
 /* Box sizing rules */
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
 }
 
 img, picture {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 /* =========================
@@ -40,6 +40,7 @@ body {
 h1, h2, h3 {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
+    color: var(--font-dark);
 }
 
 h1 {
@@ -54,9 +55,14 @@ h3 {
     font-size: 1.3rem;
 }
 
-p, a {
+p, a, label, input, textarea  {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
+    color: var(--font-dark)
+}
+
+label, input, textarea {
+    font-size: 14px;
 }
 
 /* BUTTONS */
@@ -66,16 +72,17 @@ p, a {
     border: 1px solid var(--primary-accent);
     border-radius: 10px;
     padding: 8px 16px;
-    min-width: 100px;
+    width: 107px;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
     align-self: center;
+    text-align: center;
     transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .button:hover {
     background-color: var(--primary-accent);
     color: var(--font-light);
-    box-shadow: 0px 6px 8px 1px rgba(0, 0, 0, 0.3);
 }
 
 /**** HEADER & NAV ****/
@@ -84,6 +91,9 @@ header {
     height: 70px;
     align-items: center;
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: sticky; /* doesn't work */
+    top: 0;
 }
 
 .header-container {
@@ -94,7 +104,6 @@ header {
 }
 
 .logo img {
-    width: 40vw; /* doesn't change anything */
     height: auto;
     max-width: 130px;
 }
@@ -230,7 +239,12 @@ header {
 
 
 /**** FOOTER ****/
-
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--primary-background);
+}
 /* ===========================
         INDEX PAGE CONTENT    
 =============================*/
@@ -240,7 +254,7 @@ header {
     /* gap: 50px; */
 }
 
-/* TITLE SECTION */
+/**** TITLE SECTION ****/
 .title-banner {
     display: flex;
     flex-direction: column;
@@ -262,7 +276,7 @@ header {
 }
 
 
-/* PROJECTS SECTION */
+/**** PROJECTS SECTION ****/
 .projects-container {
     background-color: var(--primary-background);
     padding: 20px;
@@ -274,7 +288,7 @@ header {
 }
 
 .heading-container {
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
 }
 
 .heading-desc {
@@ -293,11 +307,15 @@ header {
     align-items: center;
     border-radius: 10px;
     background-color: var(--primary-background);
-    box-shadow: #00000033 0px 2px 8px 0px;
     transition: all 0.2s;
     width: 100%;
     max-width: 500px;
     margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.project-card:hover {
+    box-shadow: #00000033 0px 2px 8px 0px;
 }
 
 .project-img img {
@@ -331,7 +349,6 @@ header {
 }
 
 .project-url a {
-    color: var(--font-dark);
     border-bottom: 1px solid transparent;
     padding-bottom: 1px;
     transition:
@@ -375,15 +392,13 @@ header {
         overflow: hidden;
     }
 
-
-
 }   /*  end 768px breakpoint  */
 
 
 @media only screen and (min-width: 1024px) {
 
-    .heading-container {
-        max-width: 1024px;
+    .projects-container .heading-container {
+        width: 1024px;
         margin: auto;
     }
 
@@ -391,12 +406,125 @@ header {
         max-width: 1024px;
     }
 
-    
-
-    
-
-
 }   /*  end 1024px breakpoint  */
+
+
+/**** CONTACT SECTION ****/
+.contact-container {
+    background-color: var(--primary-background);
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.contact-container .heading-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+}
+
+.location:hover {
+    color: #448481;
+}
+
+.linkedin:hover {
+    color: #0a66c2;
+}
+
+#contact-form.form {
+    min-width: 200px;
+    max-width: 500px;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    background-color: var(--alt-background);
+    border-radius: 10px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: auto;
+    width: 100%;
+}
+
+.form-field input, .form-field textarea {
+    padding: 6px 8px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: var(--primary-background);
+    transition: border 0.3s;
+}
+    
+.form-field input:hover, .form-field textarea:hover {
+    border: 1px solid var(--primary-accent);
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 35px;
+    max-height: 500px;
+}
+
+#submit {
+    min-width: 80px;
+    max-width: 80px;
+    padding: 6px 8px;
+    border: 1px solid var(--primary-background);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 8px;
+    color: var(--font-dark);
+}
+
+#submit:hover {
+    border: 1px solid var(--primary-accent);
+    color: var(--font-light);
+}
+
+@media only screen and (min-width: 768px) {
+
+    .contact-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+    }
+
+    #contact-form.form {
+        min-width: 300px;
+        width: 100%;
+    }
+
+    .form-field {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form-field label {
+        width: 65px;
+    }
+
+
+    
+}   /*  end 768px breakpoint  */
 
 /* ===========================
     PROJECTS PAGE CONTENT    

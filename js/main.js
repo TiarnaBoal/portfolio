@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-// BURGER MENU FUNCTION
+    
+//// BURGER MENU FUNCTION ////
     const menuIcon = document.getElementById('menu-icon');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = navMenu.querySelectorAll('a');
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function toggleMenu() {
         navMenu.classList.toggle('open');
         menuIcon.classList.toggle('change');
-        body.classList.toggle('no-scroll');
+        // body.classList.toggle('no-scroll');
 
         // update aria-expanded attribute
         const expanded = menuIcon.getAttribute('aria-expanded') === 'true';
@@ -34,5 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+//// FORM VALIDATION ////
+    
 });
 
