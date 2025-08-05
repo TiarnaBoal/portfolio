@@ -369,6 +369,10 @@ footer {
 
 @media only screen and (min-width: 768px) {
 
+    .projects-container {
+        padding: 30px 20px 30px 20px;
+    }
+
     .project-card {
         width: 100%;
         max-width: none;
@@ -413,47 +417,103 @@ footer {
 .contact-container {
     background-color: var(--primary-background);
     margin-top: 50px;
+    width: 100%;
+    padding: 30px 0px 20px 0px;
+}
+
+.inner-contact-container {
+    max-width: 1024px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    padding: 20px;
+    gap: 10px;
+}
+
+.contact-left-container {
+    display: flex;
+    flex-direction: column;
+    /* gap: 30px; */
 }
 
 .contact-container .heading-container {
-    display: flex;
-    flex-direction: column;
     text-align: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+.contact-links-container {
+    margin: auto;
 }
 
 .contact-links {
     display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.contact-link {
+    display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     transition: color 0.2s;
 }
 
-.location:hover {
-    color: #448481;
+.contact-link a {
+    border-bottom: 1.5px solid transparent;
+    transition: border-bottom 0.2s;
 }
 
-.linkedin:hover {
-    color: #0a66c2;
+/* ICON HOVER STYLES */
+    .location:hover {
+        color: #448481;
+    }
+
+    .email:hover {
+        color: #c0350c;
+    }
+
+    .linkedin:hover {
+        color: #0a66c2;
+    }
+
+    .github:hover {
+        color: #2dba4e;
+        /* color: #fff; */
+    }
+
+    .github svg {
+        /* border-radius: 50%; */
+        /* background-color: transparent; */
+        /* transition: background-color 0.2s; */
+    }
+
+    .github:hover svg {
+        /* background-color: #000; */
+    }
+
+    .dribbble:hover {
+        color: #ea4c89;
+    }
+
+    .linkedin:hover a, .email:hover a, .github:hover a, .dribbble:hover a {
+        border-bottom: 1.5px solid var(--font-dark);
+    }
+
+
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
-#contact-form.form {
+#contact-form {
     min-width: 200px;
     max-width: 500px;
     padding: 20px;
-    margin: auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 80%;
+    width: 90%;
     background-color: var(--alt-background);
     border-radius: 10px;
 }
@@ -484,6 +544,10 @@ footer {
     max-height: 500px;
 }
 
+.submit-form {
+    right: 0;
+}
+
 #submit {
     min-width: 80px;
     max-width: 80px;
@@ -502,14 +566,44 @@ footer {
 @media only screen and (min-width: 768px) {
 
     .contact-container {
+        padding: 40px 20px 20px 20px;
+    }
+
+    .inner-contact-container {
         flex-direction: row;
-        align-items: center;
-        gap: 50px;
+        /* align-items: center; */
+        gap: 20px;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+    .contact-left-container {
+        flex-grow: 1;
+    }
+
+    .contact-container .heading-container {
+        /* text-align: left; */
+        padding-bottom: 0;
+    }
+
+    .contact-links-container {
+        /* min-width: 220px;
+        max-width: 500px; */
+    }
+
+    .contact-links {
+        flex-direction: row;
+    }
+
+    .contact-form-container {
+        display: flex;
+        /* flex: 1; */
+        max-width: 540px;
     }
 
     #contact-form.form {
         min-width: 300px;
-        width: 100%;
+        min-width: 100%;
     }
 
     .form-field {
@@ -520,10 +614,13 @@ footer {
 
     .form-field label {
         width: 65px;
+        flex: 0.5;
     }
 
+    .form-field input, .form-field textarea {
+        flex: 2;
+    }
 
-    
 }   /*  end 768px breakpoint  */
 
 /* ===========================
