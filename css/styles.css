@@ -270,7 +270,7 @@ footer {
 /* =============================
         INDEX PAGE CONTENT    
 ===============================*/
-.index-container {
+.index-page-container {
     display: flex;
     flex-direction: column;
     /* gap: 50px; */
@@ -522,6 +522,58 @@ footer {
 
 }   /*  end 768px breakpoint  */
 
-/* ===========================
-    PROJECTS PAGE CONTENT    
-=============================*/
+
+/* ===============================
+       PROJECTS PAGE CONTENT    
+=================================*/
+.projects-page-container .title-banner {
+    margin: 2em auto;
+}
+
+.projects-page-container .title-banner p {
+    display: flex;
+    max-width: 308px;
+    margin: 0 0px 10px 0;
+    text-align: left;
+}
+
+.projects-page-container .project-desc-utilities {
+    color: #2C2A33;
+}
+
+.projects-page-container .project-desc-utilities ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1.1em;
+}
+
+@media only screen and (min-width: 560px) {
+
+   .projects-page-container .project-cards-container {
+        display: flex;
+        flex-direction: row;
+        
+        gap: 2.5rem;
+    }
+
+}   /*  end 560px breakpoint  */
+
+@media only screen and (min-width: 768px) {
+
+    .projects-page-container .title-banner {
+        align-items: start;
+        padding: 0 20px;
+        justify-content: center;
+    }
+
+    .projects-page-container .title-banner p {
+        display: flex;
+        max-width: 1024px;
+        text-align: left;
+    }
+
+    .projects-page-container .project-cards-container {
+        flex-direction: column;
+    }
+
+}   /*  end 768px breakpoint  */
