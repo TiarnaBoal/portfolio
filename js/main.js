@@ -35,8 +35,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
-//// FORM VALIDATION ////
-    
 });
 
