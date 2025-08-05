@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function toggleMenu() {
         navMenu.classList.toggle('open');
         menuIcon.classList.toggle('change');
-        // body.classList.toggle('no-scroll');
+        body.classList.toggle('no-scroll');
 
         // update aria-expanded attribute
         const expanded = menuIcon.getAttribute('aria-expanded') === 'true';
@@ -36,4 +36,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
