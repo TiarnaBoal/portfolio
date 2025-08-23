@@ -362,11 +362,11 @@ footer {
     display: flex;
     gap: 0.4rem;
     transition: color 0.2s;
+    width: 220px;
 }
 
 .project-url:hover {
     color: var(--primary-accent);
-    width: 11.1rem;
 }
 
 .project-url span {
