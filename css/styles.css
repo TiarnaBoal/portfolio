@@ -35,6 +35,12 @@ body {
     background-size: 5px 5px;
     background-image: linear-gradient(to right, #3B328710 1px, transparent 1px), linear-gradient(to bottom, #3B328710 1px, transparent 1px);
     background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 h1, h2, h3 {
@@ -173,7 +179,7 @@ header {
 
 .nav-link {
     width: 180px;
-    padding-bottom: 10px;
+    padding-bottom: .5em;
 }
 
 .nav-link a {
@@ -612,7 +618,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: .6em;
-    margin: auto;
+    margin: 0 auto .5em auto;
     text-align: center;
     max-width: 1024px;
 }
@@ -675,7 +681,7 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 1.5em;
     max-width: 234px;
-    margin: auto;
+    margin: 1.2em auto 0 auto;
 }
 
 .skill-item {
@@ -772,7 +778,7 @@ footer {
 .education-cards {
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 2.5em;
     margin: 1.5em 0;
 }
 
@@ -808,6 +814,46 @@ footer {
     gap: .4em;
 }
 
-.edu-card-desc .edu-course-title {
+.edu-card-desc .course-title {
     font-weight: 600;
+    font-size: 1.1em;
 }
+
+.edu-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    gap: .8em;
+}
+
+.edu-link {
+    min-width: 140px;
+    max-width: 260px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5em;
+}
+
+.edu-link a span {
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+    transition:
+        color 0.3s,
+        border-bottom 0.2s;
+}
+
+.edu-link:hover a span {
+    color: var(--primary-accent);
+    border-bottom: 1px solid var(--primary-accent);
+}
+
+@media only screen and (min-width: 580px) {
+
+    .edu-links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+}   /*  end 480px breakpoint  */
+
