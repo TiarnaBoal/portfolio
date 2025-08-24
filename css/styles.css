@@ -305,12 +305,13 @@ footer {
 }
 
 /**** PROJECTS SECTION ****/
-.projects-container {
+.index-projects-container {
     background-color: var(--primary-background);
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    border: 1.5px solid var(--alt-background);
 }
 
 .heading-container {
@@ -443,6 +444,7 @@ footer {
     margin-top: 50px;
     width: 100%;
     padding: 30px 0px 20px 0px;
+    border-top: 1.5px solid var(--alt-background);
 }
 
 .inner-contact-container {
@@ -531,10 +533,22 @@ footer {
 /* ===============================
        PROJECTS PAGE CONTENT    
 =================================*/
+.projects-container {
+    background-color: var(--primary-background);
+    padding: 20px 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: none;
+    border-bottom: 1.5px solid var(--alt-background);
+    margin-bottom: 50px;
+}
+
 .project-page-desc {
     background-color: var(--primary-background);
     width: 100%;
-    padding: 20px 0;
+    padding: 20px;
+    border-top: 1.5px solid var(--alt-background);
 }
 
 .inner-project-page-desc {
@@ -597,6 +611,8 @@ footer {
 .about-page-container .about-section {
     background-color: var(--primary-background);
     padding: 20px 20px 5px 20px;
+    border-top: 1.5px solid var(--alt-background);
+
 }
 
 .inner-about-container {
@@ -764,6 +780,7 @@ footer {
     width: 100%;
     padding: 20px;
     margin-bottom: 50px;
+    border-bottom: 1.5px solid var(--alt-background);
 }
 
 .inner-education-container {
