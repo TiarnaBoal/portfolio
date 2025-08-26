@@ -195,6 +195,26 @@ header {
     color: var(--alt-background);
 }
 
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        opacity 0.3s,
+        visibility 0s 0.3s;
+    z-index: 0;
+}
+
+#overlay.active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
 @media only screen and (min-width: 768px) {
     header {
         width: 100%;
@@ -271,7 +291,13 @@ footer {
     text-align: center;
     padding: 10px 0;
     background-color: var(--primary-background);
+    border-top: 1px solid var(--alt-background);
 }
+
+.index-footer {
+    border: none;
+}
+
 
 
 /* =============================
@@ -316,6 +342,9 @@ footer {
 
 .heading-container {
     padding: 10px 0;
+    margin: auto;
+    width: 100%;
+    max-width: 1024px;
 }
 
 .heading-desc {
@@ -331,7 +360,7 @@ footer {
 .project-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     border-radius: .5em;
     background-color: var(--primary-background);
     transition: all 0.2s;
@@ -347,7 +376,7 @@ footer {
 
 .project-img img {
     border-radius: .5em .5em 0 0;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .project-desc {
@@ -558,6 +587,22 @@ footer {
 
 .projects-page-container .project-card {
     max-width: 600px;
+    height: auto;
+}
+
+.project-img {
+    width: 100%;
+    height: inherit;
+    overflow-x: hidden;
+    display: flex;
+}
+
+.project-img img {
+    width: inherit;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow-x: hidden;
 }
 
 .project-desc .project-url {
@@ -567,6 +612,7 @@ footer {
 .project-desc-tools {
     margin: 10px 0;
 }
+
 .tool-list {
     display: flex;
     flex-direction: row;
@@ -603,6 +649,21 @@ footer {
 
 }   /*  end 768px breakpoint  */
 
+@media only screen and (min-width: 768px) {
+
+    .projects-page-container .project-card {
+        flex-direction: row;
+    }
+
+    .project-img {
+        flex: 1;
+    }
+
+    .project-desc {
+        flex: 1.2;
+    }
+
+}   /*  end 768px breakpoint  */
 
 
 /* ===============================

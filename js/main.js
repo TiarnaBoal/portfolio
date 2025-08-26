@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = navMenu.querySelectorAll('a');
     const body = document.body;
+    const overlay = document.getElementById('overlay');
 
     function toggleMenu() {
         navMenu.classList.toggle('open');
         menuIcon.classList.toggle('change');
         body.classList.toggle('no-scroll');
+        overlay.classList.toggle('active');
 
         // update aria-expanded attribute
         const expanded = menuIcon.getAttribute('aria-expanded') === 'true';
@@ -35,4 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // close menu when overlay is clicked
+    overlay.addEventListener('click', () => toggleMenu(true));
 });
