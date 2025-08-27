@@ -190,7 +190,7 @@ header {
 }
 
 #current-page {
-    border-bottom: 1.5px solid var(--alt-background);
+    border-bottom: 2px solid var(--alt-background);
 }
 
 #overlay {
@@ -245,8 +245,6 @@ header {
 
     .nav-link {
         padding: 10px;
-        border-bottom: 1.5px solid transparent;
-        transition: border-bottom 0.2s;
         width: auto;
     }
 
@@ -276,11 +274,10 @@ header {
 
     #current-page {
         border-bottom: none;
-        color: var(--primary-accent);
     }
 
     #current-page a {
-        color: var(--font-dark);
+        color: var(--primary-accent);
     }
 
 }   /*  end 768px breakpoint  */
@@ -394,12 +391,19 @@ footer {
     gap: 10px;
 }
 
+.project-url-container {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+
+}
+
 .project-url {
     font-size: 14px;
     display: flex;
     gap: 6px;
     transition: color 0.2s;
-    width: 220px;
+    max-width: 220px;
 }
 
 .project-url:hover {
@@ -940,7 +944,6 @@ footer {
 }
 
 .edu-year {
-    /* color: #5f5b6f; */
     color: var(--font-dark);
     font-size: 14px;
 }
