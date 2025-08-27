@@ -40,4 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // close menu when overlay is clicked
     overlay.addEventListener('click', () => toggleMenu(true));
+
+
+//// ACCORDION FUNCTION ////
+    const headers = document.querySelectorAll(".edu-card-header");
+
+    function toggleAccordion() {
+        const card = this.parentElement;
+        const openAccordion = card.classList.contains("open-accordion");
+
+        card.classList.toggle("open-accordion", !openAccordion);
+
+        this.setAttribute("aria-expanded", !openAccordion);
+    }
+
+    headers.forEach(function(header) {
+        header.addEventListener('click', toggleAccordion);
+        header.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleAccordion.call(this);
+            }
+        });
+    });
 });

@@ -906,35 +906,62 @@ footer {
     max-width: 1024px;
     display: flex;
     flex-direction: column;
-    gap: .2em;
+    gap: 20px;
 }
 
 .edu-card-header {
     display: flex;
-    justify-content: space-between;
-    align-items: start;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    /* align-items: start; */
+    gap: 12px;
+    cursor: pointer;
 }
 
-.edu-card-header h3 {
+.edu-card-header-top, .edu-card-header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.edu-card-header-top h3 {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.edu-card-header-top svg {
+    transition: transform 0.3s;
+}
+
+.edu-card-header-bottom .course-title {
     font-weight: 500;
     font-size: 1.2em;
 }
 
-.edu-card-header .edu-year {
-    color: #5f5b6f;
+.edu-year {
+    /* color: #5f5b6f; */
+    color: var(--font-dark);
     font-size: 14px;
 }
 
 .edu-card-desc {
-    display: flex;
+    display: none;
     flex-direction: column;
-    gap: .4em;
+    gap: 8px;
 }
 
-.edu-card-desc .course-title {
-    font-weight: 600;
-    font-size: 1.1em;
+/* open state */
+.education-card.open-accordion .edu-card-desc {
+    display: flex;
 }
+
+.education-card.open-accordion .edu-card-header-top svg {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+}
+
+.education-card.open-accordion
 
 .edu-links {
     display: flex;
@@ -959,11 +986,7 @@ footer {
 .edu-link a span {
     position: relative;
     display: inline-block;
-    /* border-bottom: 1px solid transparent; */
     padding-bottom: 4px;
-    /* transition:
-        color 0.3s,
-        border-bottom 0.2s; */
 }
 
 .edu-link a span::after {
@@ -990,10 +1013,7 @@ footer {
 
 .edu-link:hover a span {
     color: var(--primary-accent);
-    /* border-bottom: 1px solid var(--primary-accent); */
 }
-
-
 
 @media only screen and (min-width: 580px) {
 
@@ -1003,4 +1023,3 @@ footer {
     }
 
 }   /*  end 480px breakpoint  */
-
