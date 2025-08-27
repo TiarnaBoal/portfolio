@@ -185,14 +185,12 @@ header {
 .nav-link a {
     color: var(--font-light);
     font-size: 1.5rem;
+    display: inline-block;
+    position: relative;
 }
 
 #current-page {
     border-bottom: 1.5px solid var(--alt-background);
-}
-
-#current-page a {
-    color: var(--alt-background);
 }
 
 #overlay {
@@ -239,7 +237,6 @@ header {
         align-items: center;
         transform: translateX(0);
         background-color: var(--primary-background);
-        
     }
 
     #nav-links {
@@ -259,16 +256,27 @@ header {
         padding-bottom: 4px;
     }
     
-    .nav-link:hover {
-        border-bottom: 1.5px solid var(--primary-accent);
+    .nav-link a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary-accent);
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
     }
 
-    .nav-link:hover a {
-        color: var(--primary-accent);
+    .nav-link a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
 
     #current-page {
-        border-bottom: 1.5px solid var(--font-dark);
+        border-bottom: none;
+        color: var(--primary-accent);
     }
 
     #current-page a {
@@ -376,7 +384,6 @@ footer {
 
 .project-img img {
     border-radius: .5em .5em 0 0;
-    /* width: 100%; */
 }
 
 .project-desc {
@@ -390,7 +397,7 @@ footer {
 .project-url {
     font-size: 14px;
     display: flex;
-    gap: 0.4rem;
+    gap: 6px;
     transition: color 0.2s;
     width: 220px;
 }
@@ -405,16 +412,31 @@ footer {
 }
 
 .project-url a {
-    border-bottom: 1px solid transparent;
-    padding-bottom: 1px;
-    transition:
-        color 0.3s,
-        border-bottom 0.2s;
+    padding: 4px 0;
+    position: relative;
+    display: inline-block;
+}
+
+.project-url a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.project-url a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .project-url a:hover {
     color: var(--primary-accent);
-    border-bottom: 1px solid var(--primary-accent);
 }
 
 .projects-button-container {
@@ -480,7 +502,7 @@ footer {
     max-width: 1024px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
 }
 
 .contact-container .heading-container {
@@ -494,7 +516,7 @@ footer {
 .contact-links {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     text-align: left;
 }
 
@@ -507,8 +529,29 @@ footer {
 }
 
 .contact-link a {
+    position: relative;
+    display: inline-block;
     border-bottom: 1.5px solid transparent;
     transition: border-bottom 0.2s;
+    padding: 4px 0;
+}
+
+.contact-link a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.contact-link a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* ICON HOVER STYLES */
@@ -530,10 +573,6 @@ footer {
 
     .dribbble:hover {
         color: #ea4c89;
-    }
-
-    .linkedin:hover a, .email:hover a, .github:hover a, .dribbble:hover a {
-        border-bottom: 1.5px solid var(--font-dark);
     }
 
 @media only screen and (min-width: 768px) {
@@ -901,7 +940,7 @@ footer {
     display: flex;
     flex-direction: column;
     margin-top: 1em;
-    gap: .8em;
+    gap: 12px;
 }
 
 .edu-link {
@@ -910,21 +949,51 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: .5em;
+    gap: 6px;
+}
+
+.edu-link svg {
+    margin-bottom: 4px;
 }
 
 .edu-link a span {
-    border-bottom: 1px solid transparent;
-    padding-bottom: 1px;
-    transition:
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px solid transparent; */
+    padding-bottom: 4px;
+    /* transition:
         color 0.3s,
-        border-bottom 0.2s;
+        border-bottom 0.2s; */
+}
+
+.edu-link a span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;    
+}
+
+.edu-link:hover a span::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;    
+}
+
+.edu-link:hover svg {
+    color: var(--primary-accent);
 }
 
 .edu-link:hover a span {
     color: var(--primary-accent);
-    border-bottom: 1px solid var(--primary-accent);
+    /* border-bottom: 1px solid var(--primary-accent); */
 }
+
+
 
 @media only screen and (min-width: 580px) {
 
