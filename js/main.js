@@ -56,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     headers.forEach(function(header) {
         header.addEventListener('click', toggleAccordion);
-        header.addEventListener('keydown', (e) => {
+
+        header.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 toggleAccordion.call(this);
