@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+    // enable hover affects to be visible on touch screens
+    document.addEventListener("touchstart", function() {}, true);
+
 //// BURGER MENU FUNCTION ////
     const menuIcon = document.getElementById('menu-icon');
     const navMenu = document.getElementById('nav-menu');
