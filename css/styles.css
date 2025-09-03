@@ -208,7 +208,13 @@ header {
 }
 
 #current-page {
-    border-bottom: 2px solid var(--alt-background);
+    /* border-bottom: 2px solid var(--alt-background); */
+    color: var(--secondary-accent-light);
+}
+
+#current-page a {
+    color: var(--secondary-accent-light);
+    color: #3A3286;
 }
 
 #overlay {
@@ -308,29 +314,7 @@ header {
 
 }   /*  end 1055px breakpoint  */
 
-/**** FOOTER ****/
-footer {
-    font-size: 0.8rem;
-    text-align: center;
-    padding: 40px 0;
-    background-color: var(--primary-background);
-    border-top: 1px solid var(--alt-background);
-}
-
-.index-footer {
-    border: none;
-    padding: 20px 0 40px 0;
-}
-
-/* =============================
-        INDEX PAGE CONTENT    
-===============================*/
-.index-page-container {
-    display: flex;
-    flex-direction: column;
-}
-
-/**** TITLE SECTION ****/
+/**** TITLE BANNERS ****/
 .title-banner {
     position: relative;
     display: flex;
@@ -339,6 +323,28 @@ footer {
     color: var(--font-light);
     margin: auto;
     max-width: 1200px;
+}
+
+.title-banner span {
+    position: relative;
+}
+
+.title-banner span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.title-banner h1:hover span::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .inner-title-banner {
@@ -432,6 +438,41 @@ footer {
 
 }   /*  end 768px breakpoint  */
 
+.projects-page-container .title-banner, .about-page-container .title-banner {
+    height: 40vh;
+    padding: 0 20px;
+}
+
+@media only screen and (min-width: 1240px) {
+
+    .projects-page-container .title-banner, .about-page-container .title-banner {
+        padding: 0 ;
+    }
+
+}   /*  end 768px breakpoint  */
+
+/**** FOOTER ****/
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 40px 0;
+    background-color: var(--primary-background);
+    border-top: 1px solid var(--alt-background);
+}
+
+.index-footer {
+    border: none;
+    padding: 20px 0 40px 0;
+}
+
+/* =============================
+        INDEX PAGE CONTENT    
+===============================*/
+.index-page-container {
+    display: flex;
+    flex-direction: column;
+}
+
 /**** PROJECTS SECTION ****/
 .index-projects-container {
     background-color: var(--primary-background);
@@ -493,7 +534,6 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 45px;
-
 }
 
 .project-url {
@@ -780,12 +820,6 @@ footer {
     background-color: var(--alt-background);
 }
 
-
-@media only screen and (min-width: 560px) {
-
-
-}   /*  end 560px breakpoint  */
-
 @media only screen and (min-width: 768px) {
 
     .projects-page-container .project-cards-container {
@@ -826,7 +860,6 @@ footer {
     background-color: var(--primary-background);
     padding: 20px 20px 5px 20px;
     border-top: 1.5px solid var(--alt-background);
-
 }
 
 .inner-about-container {
