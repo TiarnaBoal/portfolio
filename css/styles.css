@@ -19,26 +19,20 @@ img, picture {
 ============================*/
 :root {
     --primary-accent: #3A3286;
-    --primary-accent-dark: #2B2563; /* not used */
+    --primary-accent-dark: #2B2563;
     --secondary-accent: #648381;
-    --secondary-accent-light: #A6BBBA; /* not used */
+    --secondary-accent-light: #A6BBBA;
     --primary-background: #FFFFFF;
     --alt-background: #F0EFF4;
     --font-dark: #2C2A33;
     --font-light: #ffffff;
-    --error: #CC0000; /* not used */
 }
 
 body {
     min-height: 100vh;
     font-size: 1rem;
     display: flex;
-    flex-direction: column;
-    /* background-size: 5px 5px; */
-    /* background-image: linear-gradient(to right, #3B328710 1px, transparent 1px), linear-gradient(to bottom, #3B328710 1px, transparent 1px); */
-    /* background-attachment: fixed; */
-
-    
+    flex-direction: column;    
 }
 
 body::before {
@@ -835,6 +829,10 @@ footer {
 
     .projects-page-container .project-card {
         max-width: 1400px;
+    }
+
+    .projects-page-container .project-img img {
+        border-radius: 10px 0 0 10px;
     }
 
     .tool-list {
